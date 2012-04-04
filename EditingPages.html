@@ -39,13 +39,25 @@ git clone git@github.com:StatComputingUCDavis/Spring12BBSeminar.git
 git checkout gh-pages      
 </pre>
       The HTML files will now be there.
+
+  <dt>
+  <li> You'll only have to do the previous steps once.
+  <dd>
       
   <dt>
-  <li> Edit the HTML files as you want.  
+  <li> Now, edit the HTML files as you want.  
   <dd>
 
   <dt>
   <li> Check that they display correctly in your browser.
+  <dd>
+
+  <dt>
+  <li> Commit any files you changed with
+<pre class="shell">
+git add Resources.html index.html newFile.html
+git commit -m "a message describing the changes"      
+</pre>      
   <dd>
 
   <dt>
@@ -56,6 +68,16 @@ git push origin gh-pages
   <dd> The updated HTML pages can then be seen at
 <a href="http://statcomputingucdavis.github.com/Spring12BBSeminar/index.html">http://statcomputingucdavis.github.com/Spring12BBSeminar/index.html</a>      
 
+
+  <dt>
+  <li> To get the most recent versions that other people may have
+  changed, etc. use
+<pre class="shell">
+git pull origin gh-pages      
+</pre>      
+  <dd>
+      Make certain to do this before editing any of the files.
+      
 </dl>
 There are other ways to streamline the git process, but this is the
 simple way.
@@ -70,6 +92,6 @@ you to github and git and that is just "a good thing"&#153;.
 <address><a href="http://www.stat.ucdavis.edu/~duncan">Duncan Temple Lang</a>
 <a href=mailto:duncan@wald.ucdavis.edu>&lt;duncan@wald.ucdavis.edu&gt;</a></address>
 <!-- hhmts start -->
-Last modified: Tue Apr  3 17:21:42 PDT 2012
+Last modified: Tue Apr  3 17:26:39 PDT 2012
 <!-- hhmts end -->
 </body> </html>
