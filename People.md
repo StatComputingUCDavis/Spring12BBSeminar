@@ -8,5 +8,5 @@
 * Dave Harris: Ecological statistics
 ![Dave Harris](http://davharris.github.com/medium%20face.jpg)
 
-* [Noam Ross](http://www.noamross.net) Ecological Forecasting and Economics
+* [Noam Ross](http://www.noamross.net): Ecological Forecasting and Economics
 ![Noam Ross](http://dl.dropbox.com/u/3356641/Noam_Ross_Photo_June_2011.jpg)
