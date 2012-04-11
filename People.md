@@ -9,4 +9,4 @@
 ![Dave Harris](http://davharris.github.com/medium%20face.jpg)
 
 * [Noam Ross](http://www.noamross.net) Ecological Forecasting and Economics
-![Noam Ross](https://si0.twimg.com/profile_images/2029102056/Noam_Ross_Photo_June_2011.jpg)
+![Noam Ross](http://dl.dropbox.com/u/3356641/Noam_Ross_Photo_June_2011.jpg)
