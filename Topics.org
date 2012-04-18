@@ -1,0 +1,141 @@
+#+TITLE: Brown Bag Seminar on Technologies for Data Sciences
+
+#+STYLE: <style type="text/css">
+#+STYLE:   H1 {color: red}
+#+STYLE: </style>
+
+Organizers: Duncan Temple Lang & Jerome Braun
+
+The idea is to identify, become familiar with and discuss and compare
+technologies that are used increasingly in research and industry in
+the area of "Data Sciences". We'll explore these together informally
+by collectively educating each other.
+
+The following are some sample topics we might discuss. This is
+intentionally vague and incomplete. I strongly encourage each of you
+to suggest others. Just send me mail.
+
+Also, I really want and expect people to volunteer to research one of
+these or other related topics and to give a presentation. You don't
+have to be an expert in the topic, just interested in exploring it and
+willing to spend time investigating it with my help and guidance as
+you want it. You can partner and work with somebody and give a joint
+presentation Please email if you have identified a topic and are
+willing to give a talk.
+
+##<<TOP>>
+
+* Strategies & Packages for Handling Big Data in R
+[[<<TOP>>][Back to top]]
+
+* Parallel & Distributed Computing
+
+  +  Scheduling
+  +  Fault Tolerance
+  +  Queueing software
+  +  MPI, multi-core, snow 
+
+[[<<TOP>>][Back to top]]
+
+* Cloud Computing & Interfaces
+[[<<TOP>>][Back to top]]
+
+* Hadoop
+[[<<TOP>>][Back to top]]
+
+
+* MapReduce
+  [[http://code.google.com/edu/parallel/mapreduce-tutorial.html][Succint overview]]
+
+[[<<TOP>>][Back to top]]
+
+
+* PIG programming language
+[[<<TOP>>][Back to top]]
+
+* Text Search and Processing
+
+  + Lucene
+  + ElasticSearch
+  + Solr 
+
+[[<<TOP>>][Back to top]]
+
+* NoSQL databases
+[[<<TOP>>][Back to top]]
+
+* SQL databases
+
+  + General
+
+    - Presenter :: Bill
+    - Date :: 2012-04-17
+
+[[<<TOP>>][Back to top]]
+
+
+* GPUs (Graphical Processing Units) for Scientific Computing
+[[<<TOP>>][Back to top]]
+
+* Visualization for Large Data
+[[<<TOP>>][Back to top]]
+
+* Choice of BLAS
+  [[http://cran.r-project.org/web/packages/gcbd/vignettes/gcbd.pdf][Benchmarks paper]]
+
+[[<<TOP>>][Back to top]]
+
+* Dynamic Documents & Reproducible Research
+
+  + Sweave, Knitr, etc.
+  + odfWeave, RWordXML
+  + XDynDocs - XML and XSL
+  + Emacs Org mode, esp. the Babel extension 
+
+[[<<TOP>>][Back to top]]
+
+* Interfacing to Native/compiled code
+
+  + Rcpp & Co. ("Not your father's C++")
+
+[[<<TOP>>][Back to top]]
+
+* Writing R software & packages
+[[<<TOP>>][Back to top]]
+
+* Programming Languages
+  + C, C++, Python, Julia, MATLAB, ... 
+
+[[<<TOP>>][Back to top]]
+
+* Version Control
+
+  + git
+    - Presenter :: Vince
+    - Date :: 2012-04-17
+
+[[<<TOP>>][Back to top]]
+
+* Productivity tools
+  + Workflow, Editors, Programming Environment, etc.
+
+[[<<TOP>>][Back to top]]
+
+* Statistics
+
+  + Regularization 
+  + Controlling False Discovery Rate (FDR) for massively multiple
+    testing
+
+[[<<TOP>>][Back to top]]
+
+* Streaming data and real-time estimation
+[[<<TOP>>][Back to top]]
+
+* Network Discovery and Analysis
+
+  + Gene Regulatory Networks
+  + Communities in Social Media
+  + Collaboration/Co-author Networks (eg academic papers, wikipedia, etc) 
+[[<<TOP>>][Back to top]]
+
