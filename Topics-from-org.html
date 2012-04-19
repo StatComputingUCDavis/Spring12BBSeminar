@@ -1,0 +1,497 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Brown Bag Seminar on Technologies for Data Sciences</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Brown Bag Seminar on Technologies for Data Sciences"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2012-04-18 14:32:46 PDT"/>
+<meta name="author" content="Michael Hannon"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<style type="text/css">
+H1 {color: red}
+</style>
+<script type="text/javascript">
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Brown Bag Seminar on Technologies for Data Sciences</h1>
+
+
+<p>
+Organizers: Duncan Temple Lang &amp; Jerome Braun
+</p>
+<p>
+The idea is to identify, become familiar with and discuss and compare
+technologies that are used increasingly in research and industry in
+the area of "Data Sciences". We'll explore these together informally
+by collectively educating each other.
+</p>
+<p>
+The following are some sample topics we might discuss. This is
+intentionally vague and incomplete. I strongly encourage each of you
+to suggest others. Just send me mail.
+</p>
+<p>
+Also, I really want and expect people to volunteer to research one of
+these or other related topics and to give a presentation. You don't
+have to be an expert in the topic, just interested in exploring it and
+willing to spend time investigating it with my help and guidance as
+you want it. You can partner and work with somebody and give a joint
+presentation Please email if you have identified a topic and are
+willing to give a talk.
+</p>
+<p>
+<a name="TOP" id="TOP"></a>
+</p>
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">1 Strategies &amp; Packages for Handling Big Data in R</a></li>
+<li><a href="#sec-2">2 Parallel &amp; Distributed Computing</a></li>
+<li><a href="#sec-3">3 Cloud Computing &amp; Interfaces</a></li>
+<li><a href="#sec-4">4 Hadoop</a></li>
+<li><a href="#sec-5">5 MapReduce</a></li>
+<li><a href="#sec-6">6 PIG programming language</a></li>
+<li><a href="#sec-7">7 Text Search and Processing</a></li>
+<li><a href="#sec-8">8 NoSQL databases</a></li>
+<li><a href="#sec-9">9 SQL databases</a></li>
+<li><a href="#sec-10">10 GPUs (Graphical Processing Units) for Scientific Computing</a></li>
+<li><a href="#sec-11">11 Visualization for Large Data</a></li>
+<li><a href="#sec-12">12 Choice of BLAS</a></li>
+<li><a href="#sec-13">13 Dynamic Documents &amp; Reproducible Research</a></li>
+<li><a href="#sec-14">14 Interfacing to Native/compiled code</a></li>
+<li><a href="#sec-15">15 Writing R software &amp; packages</a></li>
+<li><a href="#sec-16">16 Programming Languages</a></li>
+<li><a href="#sec-17">17 Version Control</a></li>
+<li><a href="#sec-18">18 Productivity tools</a></li>
+<li><a href="#sec-19">19 Statistics</a></li>
+<li><a href="#sec-20">20 Streaming data and real-time estimation</a></li>
+<li><a href="#sec-21">21 Network Discovery and Analysis</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1"><span class="section-number-2">1</span> Strategies &amp; Packages for Handling Big Data in R</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2"><span class="section-number-2">2</span> Parallel &amp; Distributed Computing</h2>
+<div class="outline-text-2" id="text-2">
+
+
+<ul>
+<li>Scheduling
+</li>
+<li>Fault Tolerance
+</li>
+<li>Queueing software
+</li>
+<li>MPI, multi-core, snow 
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3"><span class="section-number-2">3</span> Cloud Computing &amp; Interfaces</h2>
+<div class="outline-text-2" id="text-3">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4"><span class="section-number-2">4</span> Hadoop</h2>
+<div class="outline-text-2" id="text-4">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> MapReduce</h2>
+<div class="outline-text-2" id="text-5">
+
+<p>  <a href="http://code.google.com/edu/parallel/mapreduce-tutorial.html">Succint overview</a>
+</p>
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> PIG programming language</h2>
+<div class="outline-text-2" id="text-6">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Text Search and Processing</h2>
+<div class="outline-text-2" id="text-7">
+
+
+<ul>
+<li>Lucene
+</li>
+<li>ElasticSearch
+</li>
+<li>Solr 
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> NoSQL databases</h2>
+<div class="outline-text-2" id="text-8">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-9" class="outline-2">
+<h2 id="sec-9"><span class="section-number-2">9</span> SQL databases</h2>
+<div class="outline-text-2" id="text-9">
+
+
+<ul>
+<li>General
+
+<dl>
+<dt>Presenter</dt><dd>Bill
+</dd>
+<dt>Date</dt><dd>2012-04-17
+</dd>
+</dl>
+
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+
+</div>
+
+</div>
+
+<div id="outline-container-10" class="outline-2">
+<h2 id="sec-10"><span class="section-number-2">10</span> GPUs (Graphical Processing Units) for Scientific Computing</h2>
+<div class="outline-text-2" id="text-10">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-11" class="outline-2">
+<h2 id="sec-11"><span class="section-number-2">11</span> Visualization for Large Data</h2>
+<div class="outline-text-2" id="text-11">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-12" class="outline-2">
+<h2 id="sec-12"><span class="section-number-2">12</span> Choice of BLAS</h2>
+<div class="outline-text-2" id="text-12">
+
+<p>  <a href="http://cran.r-project.org/web/packages/gcbd/vignettes/gcbd.pdf">Benchmarks paper</a>
+</p>
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-13" class="outline-2">
+<h2 id="sec-13"><span class="section-number-2">13</span> Dynamic Documents &amp; Reproducible Research</h2>
+<div class="outline-text-2" id="text-13">
+
+
+<ul>
+<li>Sweave, Knitr, etc.
+</li>
+<li>odfWeave, RWordXML
+</li>
+<li>XDynDocs - XML and XSL
+</li>
+<li>Emacs Org mode, esp. the Babel extension 
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-14" class="outline-2">
+<h2 id="sec-14"><span class="section-number-2">14</span> Interfacing to Native/compiled code</h2>
+<div class="outline-text-2" id="text-14">
+
+
+<ul>
+<li>Rcpp &amp; Co. ("Not your father's C++")
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-15" class="outline-2">
+<h2 id="sec-15"><span class="section-number-2">15</span> Writing R software &amp; packages</h2>
+<div class="outline-text-2" id="text-15">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-16" class="outline-2">
+<h2 id="sec-16"><span class="section-number-2">16</span> Programming Languages</h2>
+<div class="outline-text-2" id="text-16">
+
+<ul>
+<li>C, C++, Python, Julia, MATLAB, &hellip; 
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-17" class="outline-2">
+<h2 id="sec-17"><span class="section-number-2">17</span> Version Control</h2>
+<div class="outline-text-2" id="text-17">
+
+
+<ul>
+<li>git
+<dl>
+<dt>Presenter</dt><dd>Vince
+</dd>
+<dt>Date</dt><dd>2012-04-17
+</dd>
+</dl>
+
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-18" class="outline-2">
+<h2 id="sec-18"><span class="section-number-2">18</span> Productivity tools</h2>
+<div class="outline-text-2" id="text-18">
+
+<ul>
+<li>Workflow, Editors, Programming Environment, etc.
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-19" class="outline-2">
+<h2 id="sec-19"><span class="section-number-2">19</span> Statistics</h2>
+<div class="outline-text-2" id="text-19">
+
+
+<ul>
+<li>Regularization 
+</li>
+<li>Controlling False Discovery Rate (FDR) for massively multiple
+    testing
+</li>
+</ul>
+
+
+<p>
+<a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-20" class="outline-2">
+<h2 id="sec-20"><span class="section-number-2">20</span> Streaming data and real-time estimation</h2>
+<div class="outline-text-2" id="text-20">
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-21" class="outline-2">
+<h2 id="sec-21"><span class="section-number-2">21</span> Network Discovery and Analysis</h2>
+<div class="outline-text-2" id="text-21">
+
+
+<ul>
+<li>Gene Regulatory Networks
+</li>
+<li>Communities in Social Media
+</li>
+<li>Collaboration/Co-author Networks (eg academic papers, wikipedia, etc) 
+</li>
+</ul>
+
+<p><a href="#TOP">Back to top</a>
+</p>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2012-04-18 14:32:46 PDT</p>
+<p class="author">Author: Michael Hannon</p>
+<p class="creator">Org version 7.8.03 with Emacs version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
