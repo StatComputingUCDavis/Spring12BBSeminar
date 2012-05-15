@@ -1,0 +1,292 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0014)about:internet -->
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title>About knitr</h1>
+
+<p>Knitr and Markdown help enable fast, reproducible sharing of research and methods. We use them for both formal and informal workflows.</p>
+
+<p>Knit files include both text and code, and are easy to distribute and revise.  They have four components</p>
+
+<ul>
+<li>Markdown (or HTML or LaTeX or &hellip;) text</li>
+<li>R code</li>
+<li><em>Patterns</em> - designate the start and end of code <em>chunks</em></li>
+<li><em>Options</em> - designate how to evaluate code, either for a specific chunk or for the whole file</li>
+</ul>
+
+<p>When a knit file is evaluated, you get</p>
+
+<ul>
+<li>The same text you started with</li>
+<li>The R code you wrote</li>
+<li>The results of the code - as text and images, and</li>
+<li><em>Hooks</em> - text that designates the start and end of code.</li>
+</ul>
+
+<p>Patterns and hooks allow us to use knit in pretty much any document format.  By default, knitr will read the extension of the file you write and determine its format, and set appropriate patterns and hooks to generate output in the same format.</p>
+
+<p><strong>Other features</strong></p>
+
+<ul>
+<li>Code cleanup: knitr uses the <code>formatR</code> package to make your code readable.  If you are exporting HTML, it will also syntax-highlight code</li>
+<li>Cacheing - for computationally intense chunks, you can cache results so that, if the document is revised, you don&#39;t have to re-run code.<br/></li>
+<li>Many options for figure output, as well has image upload to imgur</li>
+<li>Highly customizable</li>
+<li>Ability to choose what output is displayed and what isn&#39;t</li>
+</ul>
+
+<h2>Getting Knitr</h2>
+
+<p>Knitr has a <a href="http://yihui.github.com/knitr/">great website</a> with many <a href="http://yihui.name/knitr/demo/minimal/">examples</a>.</p>
+
+<p>All you need to use knitr is to install with</p>
+
+<pre><code class="no-highlight">install.packages(&quot;knitr&quot;)
+</code></pre>
+
+<p><a href="http://www.rstudio.org/download/">RStudio&#39;s latest version</a> has native support for knitr.  Just go to Options/Preferences &gt;&gt; Sweave &gt;&gt; and enable &ldquo;knitr&rdquo;.</p>
+
+<h1>Workflow</h1>
+
+<p>Using github, we generally do this:</p>
+
+<ul>
+<li>Write knit file</li>
+<li>Knit</li>
+<li>Upload both the source and knit files to github</li>
+</ul>
+
+<p>With RStudio, a one-button &ldquo;Knit HTML&rdquo; button generates an HTML page that can be uploaded anywhere.</p>
+
+<h1>About Markdown</h1>
+
+<ul>
+<li>Simple format for web publishing</li>
+<li>Many blogging services (inc. wordpress, github pages) allow one to write and publish in markdown directly.</li>
+<li>Many different parsers with slightly different flavors for markdown.  Syntax for most basic elements (images, links, headings, etc.) is the same but, different for more advanced features (tables, code blocks, citations)</li>
+<li><p>Parsers can convert markdown HTML, LaTeX, even (gasp!) MS Word.  (MultiMarkdown, Pandoc)</p></li>
+<li><p>You can find documentation on markdown syntax <a href="http://daringfireball.net/projects/markdown/syntax">here</a></p></li>
+<li><p>Github has its own modification to markdown, documented <a href="http://github.github.com/github-flavored-markdown/">here</a></p></li>
+<li><p><a href="http://johnmacfarlane.net/pandoc/index.html">Pandoc</a> and <a href="http://fletcherpenney.net/multimarkdown/">Multimarkdown</a> are programs that convert markdown to HTML, LaTeX, and other formats.  They include support for LaTeX-style math for HTML, using <a href="http://www.mathjax.org/">MathJax</a></p></li>
+</ul>
+
+<h1>Some examples</title>
+
+<base target="_blank"/>
+
+<style type="text/css">
+
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 12px;
+   margin: 8px;
+}
+
+tt, code, pre {
+   font-family: Monaco, 'DejaVu Sans Mono', 'Droid Sans Mono', Consolas, 'Lucida Console', monospace;
+}
+
+h1 { 
+   font-size:2.2em; 
+}
+
+h2 { 
+   font-size:1.8em; 
+}
+
+h3 { 
+   font-size:1.4em; 
+}
+
+h4 { 
+   font-size:1.0em; 
+}
+
+h5 { 
+   font-size:0.9em; 
+}
+
+h6 { 
+   font-size:0.8em; 
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre {	
+   margin-top: 0;
+   max-width: 95%;
+   border: 1px solid #ccc;
+}
+
+.r {
+   background-color: #F8F8F8;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+	border-top-style: dotted;
+	border-top-color: #999999;
+}
+
+
+
+
+@media print {
+   * { 
+      background: transparent !important; 
+      color: black !important; 
+      filter:none !important; 
+      -ms-filter: none !important; 
+   }
+
+   body { 
+      font-size:12pt; 
+      max-width:100%; 
+   }
+       
+   a, a:visited { 
+      text-decoration: underline; 
+   }
+
+   hr { 
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote { 
+      padding-right: 1em; 
+      page-break-inside: avoid; 
+   }
+
+   tr, img { 
+      page-break-inside: avoid; 
+   }
+
+   img { 
+      max-width: 100% !important; 
+   }
+
+   @page :left { 
+      margin: 15mm 20mm 15mm 10mm; 
+   }
+     
+   @page :right { 
+      margin: 15mm 10mm 15mm 20mm; 
+   }
+
+   p, h2, h3 { 
+      orphans: 3; widows: 3; 
+   }
+
+   h2, h3 { 
+      page-break-after: avoid; 
+   }
+}
+
+</style>
+
+<script type="text/javascript">
+     
+</script>
+
+
+
+</head>
+
+<body>
+<h1>About knitr</h1>
+
+<p>Knitr and Markdown help enable fast, reproducible sharing of research and methods. We use them for both formal and informal workflows.</p>
+
+<p>Knit files include both text and code, and are easy to distribute and revise.  They have four components</p>
+
+<ul>
+<li>Markdown (or HTML or LaTeX or &hellip;) text</li>
+<li>R code</li>
+<li><em>Patterns</em> - designate the start and end of code <em>chunks</em></li>
+<li><em>Options</em> - designate how to evaluate code, either for a specific chunk or for the whole file</li>
+</ul>
+
+<p>When a knit file is evaluated, you get</p>
+
+<ul>
+<li>The same text you started with</li>
+<li>The R code you wrote</li>
+<li>The results of the code - as text and images, and</li>
+<li><em>Hooks</em> - text that designates the start and end of code.</li>
+</ul>
+
+<p>Patterns and hooks allow us to use knit in pretty much any document format.  By default, knitr will read the extension of the file you write and determine its format, and set appropriate patterns and hooks to generate output in the same format.</p>
+
+<p><strong>Other features</strong></p>
+
+<ul>
+<li>Code cleanup: knitr uses the <code>formatR</code> package to make your code readable.  If you are exporting HTML, it will also syntax-highlight code</li>
+<li>Cacheing - for computationally intense chunks, you can cache results so that, if the document is revised, you don&#39;t have to re-run code.<br/></li>
+<li>Many options for figure output, as well has image upload to imgur</li>
+<li>Highly customizable</li>
+<li>Ability to choose what output is displayed and what isn&#39;t</li>
+</ul>
+
+<h2>Getting Knitr</h2>
+
+<p>Knitr has a <a href="http://yihui.github.com/knitr/">great website</a> with many <a href="http://yihui.name/knitr/demo/minimal/">examples</a>.</p>
+
+<p>All you need to use knitr is to install with</p>
+
+<pre><code class="no-highlight">install.packages(&quot;knitr&quot;)
+</code></pre>
+
+<p><a href="http://www.rstudio.org/download/">RStudio&#39;s latest version</a> has native support for knitr.  Just go to Options/Preferences &gt;&gt; Sweave &gt;&gt; and enable &ldquo;knitr&rdquo;.</p>
+
+<h1>Workflow</h1>
+
+<p>Using github, we generally do this:</p>
+
+<ul>
+<li>Write knit file</li>
+<li>Knit</li>
+<li>Upload both the source and knit files to github</li>
+</ul>
+
+<p>With RStudio, a one-button &ldquo;Knit HTML&rdquo; button generates an HTML page that can be uploaded anywhere.</p>
+
+<h1>About Markdown</h1>
+
+<ul>
+<li>Simple format for web publishing</li>
+<li>Many blogging services (inc. wordpress, github pages) allow one to write and publish in markdown directly.</li>
+<li>Many different parsers with slightly different flavors for markdown.  Syntax for most basic elements (images, links, headings, etc.) is the same but, different for more advanced features (tables, code blocks, citations)</li>
+<li><p>Parsers can convert markdown HTML, LaTeX, even (gasp!) MS Word.  (MultiMarkdown, Pandoc)</p></li>
+<li><p>You can find documentation on markdown syntax <a href="http://daringfireball.net/projects/markdown/syntax">here</a></p></li>
+<li><p>Github has its own modification to markdown, documented <a href="http://github.github.com/github-flavored-markdown/">here</a></p></li>
+<li><p><a href="http://johnmacfarlane.net/pandoc/index.html">Pandoc</a> and <a href="http://fletcherpenney.net/multimarkdown/">Multimarkdown</a> are programs that convert markdown to HTML, LaTeX, and other formats.  They include support for LaTeX-style math for HTML, using <a href="http://www.mathjax.org/">MathJax</a></p></li>
+</ul>
+
+<h1>Some examples</h1>
+
+<ul>
+<li>Carl&#39;s FISHbase paper on github - <a href="https://github.com/ropensci/rfishbase/blob/master/inst/doc/rfishbase/rfishbase.Rmd">source</a> and <a href="https://github.com/ropensci/rfishbase/blob/master/inst/doc/rfishbase/rfishbase_github.md">knit</a> versions</li>
+<li>Noam&#39;s economics problem set - <a href="https://github.com/noamross/noamross.github.com/blob/master/ARE277%20Problem%20Set%203%20-%20Numerical%20Methods.txt">source</a> and <a href="http://noamross.net/ARE277%20Problem%20Set%203%20-%20Numerical%20Methods-k.html">knit, then converted to HTML</a></li>
+</ul>
+
+</body>
+
+</html>
+
