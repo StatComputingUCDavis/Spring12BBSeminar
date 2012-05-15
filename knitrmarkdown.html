@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="Content-Style-Type" content="text/css" />
+  <meta name="generator" content="pandoc" />
+  <meta name="author" content="Noam Ross and Carl Boettiger" />
+  <meta name="date" content="2012-05-15" />
+  <title>Notes on knitr and markdown</title>
+  <link rel="stylesheet" href="http://dl.dropbox.com/u/3356641/jekyll-site/assets/themes/noamblog/css/style.css" type="text/css" />
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+  <script type="text/x-mathjax-config">  MathJax.Hub.Config({ "HTML-CSS": { availableFonts: ["TeX"], webfont: [null] }} ); </script>
+  <script type="text/x-mathjax-config">  MathJax.Hub.Config({ TeX: { extensions: ["autobold.js"] }} ); </script>
+
+</head>
+
+<style>#wrapper { max-width:1000px; margin:0 auto }</style>
+<body>
+<div class="wrapper">
+  <div class="blog">
+    <div class="container">
+      <div class="content">
+
+
+<div id="headblock">
+<h1 id="page.title">Notes on knitr and markdown</h1>
+<p><em>Noam Ross and Carl Boettiger</em></p>
+<p>2012-05-15</p>
+<hr />
+</div> 
+<div class="contenttext">
+<h2 id="about-knitr">About knitr</h2>
+<p>Knitr and Markdown help enable fast, reproducible sharing of research and methods. We use them for both formal and informal workflows.</p>
+<p>Knit files include both text and code, and are easy to distribute and revise. They have four components</p>
+<ul>
+<li>Markdown (or HTML or LaTeX or …) text</li>
+<li>R code</li>
+<li><em>Patterns</em> - designate the start and end of code <em>chunks</em></li>
+<li><em>Options</em> - designate how to evaluate code, either for a specific chunk or for the whole file</li>
+</ul>
+<p>When a knit file is evaluated, you get</p>
+<ul>
+<li>The same text you started with</li>
+<li>The R code you wrote</li>
+<li>The results of the code - as text and images, and</li>
+<li><em>Hooks</em> - text that designates the start and end of code.</li>
+</ul>
+<p>Patterns and hooks allow us to use knit in pretty much any document format. By default, knitr will read the extension of the file you write and determine its format, and set appropriate patterns and hooks to generate output in the same format.</p>
+<p><strong>Other features</strong></p>
+<ul>
+<li>Code cleanup: knitr uses the <code>formatR</code> package to make your code readable. If you are exporting HTML, it will also syntax-highlight code</li>
+<li>Cacheing - for computationally intense chunks, you can cache results so that, if the document is revised, you don’t have to re-run code.<br /></li>
+<li>Many options for figure output, as well has image upload to imgur</li>
+<li>Highly customizable</li>
+<li>Ability to choose what output is displayed and what isn’t</li>
+</ul>
+<h3 id="getting-knitr">Getting Knitr</h3>
+<p>Knitr has a <a href="http://yihui.github.com/knitr/">great website</a> with many <a href="http://yihui.name/knitr/demo/minimal/">examples</a>.</p>
+<p>All you need to use knitr is to install with</p>
+<pre class=".sourceCode .r"><code>install.packages(&quot;knitr&quot;)</code></pre>
+<p><a href="http://www.rstudio.org/download/">RStudio’s latest version</a> has native support for knitr. Just go to Options/Preferences &gt;&gt; Sweave &gt;&gt; and enable “knitr”.</p>
+<h2 id="workflow">Workflow</h2>
+<p>Using github, we generally do this:</p>
+<ul>
+<li>Write knit file</li>
+<li>Knit</li>
+<li>Upload both the source and knit files to github</li>
+</ul>
+<p>With RStudio, a one-button “Knit HTML” button generates an HTML page that can be uploaded anywhere.</p>
+<h2 id="about-markdown">About Markdown</h2>
+<ul>
+<li>Simple format for web publishing</li>
+<li>Many blogging services (inc. wordpress, github pages) allow one to write and publish in markdown directly.</li>
+<li>Many different parsers with slightly different flavors for markdown. Syntax for most basic elements (images, links, headings, etc.) is the same but, different for more advanced features (tables, code blocks, citations)</li>
+<li><p>Parsers can convert markdown HTML, LaTeX, even (gasp!) MS Word. (MultiMarkdown, Pandoc)</p></li>
+<li>You can find documentation on markdown syntax <a href="http://daringfireball.net/projects/markdown/syntax">here</a></li>
+<li>Github has its own modification to markdown, documented <a href="http://github.github.com/github-flavored-markdown/">here</a></li>
+<li><p><a href="http://johnmacfarlane.net/pandoc/index.html">Pandoc</a> and <a href="http://fletcherpenney.net/multimarkdown/">Multimarkdown</a> are programs that convert markdown to HTML, LaTeX, and other formats. They include support for LaTeX-style math for HTML, using <a href="http://www.mathjax.org/">MathJax</a></p></li>
+</ul>
+<h2 id="some-examples">Some examples</h2>
+<ul>
+<li>Carl’s FISHbase paper on github - <a href="https://github.com/ropensci/rfishbase/blob/master/inst/doc/rfishbase/rfishbase.Rmd">source</a> and <a href="https://github.com/ropensci/rfishbase/blob/master/inst/doc/rfishbase/rfishbase_github.md">knit</a> versions</li>
+<li>Noam’s economics problem set - <a href="https://github.com/noamross/noamross.github.com/blob/master/ARE277%20Problem%20Set%203%20-%20Numerical%20Methods.txt">source</a> and <a href="http://noamross.net/ARE277%20Problem%20Set%203%20-%20Numerical%20Methods-k.html">knit, then converted to HTML</a></li>
+<li>Carl also has <a href="https://www.google.com/search?q=site%3Acarlboettiger.info&amp;q=knitr">a lot of blog posts</a> detailing knitr customizations and workflows</li>
+</ul>
+</div>
+
+  </div>
+  </div>
+  </div>
+  </div>
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+  <script type="text/javascript" src="http://dl.dropbox.com/u/3356641/jekyll-site/assets/themes/noamblog/footnote-links.js"></script>
+  <script type="text/javascript">$('div.contenttext').footnoteLinks();</script>
+</body>
+</html>
