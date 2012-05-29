@@ -1,0 +1,9 @@
+
+```{r}
+library(gputools)
+A <- matrix(rnorm(2000*30000), 2000, 30000)
+B <- matrix(rnorm(30000*4000), 30000, 4000)
+system.time(A %*% B)
+system.time(gpuMatMult(A, B))
+````
+
